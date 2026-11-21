@@ -1,2 +1,217 @@
-# Owen-digital-
-Owen digital official website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OWEN DIGITAL — modern websites and digital solutions. Contact us on WhatsApp or email.">
+  <meta name="theme-color" content="#090909">
+  <title>OWEN DIGITAL | Websites & Digital Solutions</title>
+  <style>
+    :root {
+      --bg:#090909; --panel:#121212; --panel2:#181818; --text:#f5f5f5;
+      --muted:#aaa; --line:#292929; --silver:#d2d2d2; --green:#25d366;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    button,input,textarea { font:inherit; }
+    .container { width:min(1120px,90%); margin:auto; }
+    header { position:sticky; top:0; z-index:10; background:rgba(9,9,9,.96); border-bottom:1px solid var(--line); }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .logo { font-size:21px; font-weight:800; letter-spacing:1.5px; }
+    .logo span,.accent { color:var(--silver); }
+    .nav-links { display:flex; align-items:center; gap:23px; list-style:none; }
+    .nav-links a { color:#ccc; font-size:14px; }
+    .nav-links a:hover { color:#fff; }
+    .menu-btn { display:none; background:none; color:white; border:1px solid var(--line); border-radius:7px; padding:7px 11px; font-size:22px; }
+    section { padding:84px 0; scroll-margin-top:72px; }
+    .hero { min-height:78vh; display:grid; place-items:center; text-align:center; background:radial-gradient(ellipse at 50% 0%,#292929 0%,#090909 62%); }
+    .hero-inner { max-width:790px; }
+    .eyebrow { display:inline-block; border:1px solid #555; color:#ddd; border-radius:30px; padding:6px 14px; font-size:11px; letter-spacing:2px; margin-bottom:22px; }
+    h1 { font-size:clamp(40px,7vw,72px); line-height:1.08; margin-bottom:20px; }
+    .hero p,.section-intro { color:var(--muted); max-width:650px; margin:0 auto 28px; }
+    .actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--silver); border-radius:6px; padding:12px 21px; background:var(--silver); color:#090909; font-weight:700; transition:.2s; }
+    .btn:hover { transform:translateY(-2px); background:white; }
+    .btn.secondary { background:transparent; color:white; }
+    .btn.whatsapp { background:var(--green); border-color:var(--green); color:#071b0e; }
+    .section-title { text-align:center; font-size:clamp(28px,4vw,38px); margin-bottom:12px; }
+    .section-intro { text-align:center; margin-bottom:40px; }
+    .about { max-width:800px; margin:auto; text-align:center; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:26px; }
+    .card h3 { margin:9px 0; font-size:19px; }
+    .card p { color:var(--muted); font-size:14px; }
+    .icon { font-size:27px; }
+    .work-card { overflow:hidden; padding:0; }
+    .work-visual { min-height:150px; display:grid; place-items:center; background:linear-gradient(135deg,#343434,#151515); color:#ddd; font-size:38px; }
+    .work-copy { padding:22px; }
+    .tag { display:inline-block; margin-top:12px; border:1px solid #555; border-radius:20px; padding:3px 10px; color:#ccc; font-size:11px; }
+    .price { font-size:30px; font-weight:800; color:var(--silver); margin:15px 0; }
+    .price-card { text-align:center; }
+    .price-card ul { list-style:none; color:var(--muted); margin:15px 0 22px; font-size:14px; }
+    .price-card li { padding:6px 0; border-bottom:1px solid var(--line); }
+    .contact-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap:28px; }
+    .contact-panel { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:26px; }
+    .contact-panel p { color:var(--muted); margin:8px 0 18px; }
+    .contact-detail { display:block; margin:14px 0; color:#e5e5e5; overflow-wrap:anywhere; }
+    form { display:grid; gap:13px; }
+    input,textarea { width:100%; background:#0c0c0c; color:white; border:1px solid #383838; border-radius:6px; padding:13px 14px; }
+    input:focus,textarea:focus { outline:1px solid #aaa; }
+    textarea { min-height:135px; resize:vertical; }
+    .form-note { color:var(--muted); font-size:12px; }
+    footer { border-top:1px solid var(--line); padding:25px 0; color:var(--muted); text-align:center; font-size:13px; }
+    .float-wa { position:fixed; right:17px; bottom:17px; z-index:9; background:var(--green); color:#071b0e; border-radius:30px; padding:12px 17px; font-weight:800; box-shadow:0 5px 20px #0009; }
+    @media(max-width:760px) {
+      .menu-btn { display:block; }
+      .nav-links { display:none; position:absolute; top:72px; left:0; right:0; padding:20px 5%; background:#111; border-bottom:1px solid var(--line); flex-direction:column; align-items:flex-start; }
+      .nav-links.open { display:flex; }
+      .grid,.contact-grid { grid-template-columns:1fr; }
+      section { padding:68px 0; }
+      .hero { min-height:72vh; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="#home">OWEN <span>DIGITAL</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li><li><a href="#work">Work</a></li>
+        <li><a href="#pricing">Pricing</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <span class="eyebrow">CREATIVE DIGITAL SOLUTIONS</span>
+        <h1>Build a stronger <span class="accent">digital presence.</span></h1>
+        <p>Modern, responsive websites and thoughtful digital solutions for individuals, startups and growing businesses.</p>
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/2348098657056?text=Hello%20OWEN%20DIGITAL%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn secondary" href="#work">Explore work</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About <span class="accent">OWEN DIGITAL</span></h2>
+        <p class="section-intro">Simple design. Useful technology. Clear communication.</p>
+        <div class="about">
+          <p>OWEN DIGITAL is a growing digital brand focused on creating clean, accessible and mobile-friendly websites. We aim to help people and businesses present their ideas clearly online, with solutions shaped around each project's needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">What we <span class="accent">do</span></h2>
+        <p class="section-intro">Services can be discussed and scoped to match your project.</p>
+        <div class="grid">
+          <article class="card"><div class="icon">⌘</div><h3>Website Development</h3><p>Responsive websites for personal brands, small businesses and project ideas.</p></article>
+          <article class="card"><div class="icon">✦</div><h3>Website Design</h3><p>Clear page layouts, visual styling and user-friendly website experiences.</p></article>
+          <article class="card"><div class="icon">◎</div><h3>Social Media Support</h3><p>Content planning and practical support for a consistent online presence.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2 class="section-title">Selected <span class="accent">work</span></h2>
+        <p class="section-intro">A place to showcase completed projects. Add real project screenshots and descriptions here as your work grows.</p>
+        <div class="grid">
+          <article class="card work-card"><div class="work-visual">01</div><div class="work-copy"><h3>Business Website Concept</h3><p>A practice layout exploring a clear homepage and service presentation.</p><span class="tag">CONCEPT</span></div></article>
+          <article class="card work-card"><div class="work-visual">02</div><div class="work-copy"><h3>Personal Portfolio Concept</h3><p>A practice layout for presenting a person's skills and selected work.</p><span class="tag">CONCEPT</span></div></article>
+          <article class="card work-card"><div class="work-visual">03</div><div class="work-copy"><h3>Online Store Concept</h3><p>A practice layout for displaying products and basic store information.</p><span class="tag">CONCEPT</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <h2 class="section-title">Project <span class="accent">pricing</span></h2>
+        <p class="section-intro">Every project is different. These are indicative starting points, not fixed quotes. Final scope and price are agreed before work begins.</p>
+        <div class="grid">
+          <article class="card price-card"><h3>Starter</h3><div class="price">From $100</div><ul><li>Simple website</li><li>Mobile-friendly layout</li><li>Basic contact section</li></ul><a class="btn" href="https://wa.me/2348098657056?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20Starter%20website%20package." target="_blank" rel="noopener">Ask about this</a></article>
+          <article class="card price-card"><h3>Professional</h3><div class="price">From $250</div><ul><li>Multiple website sections</li><li>Responsive design</li><li>Interactive features</li></ul><a class="btn" href="https://wa.me/2348098657056?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20Professional%20website%20package." target="_blank" rel="noopener">Ask about this</a></article>
+          <article class="card price-card"><h3>Custom</h3><div class="price">Let's discuss</div><ul><li>Project-specific scope</li><li>Custom requirements</li><li>Agreed quote before work</li></ul><a class="btn" href="https://wa.me/2348098657056?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20custom%20website%20project." target="_blank" rel="noopener">Discuss a project</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Let's <span class="accent">talk</span></h2>
+        <p class="section-intro">Share a little about what you want to build.</p>
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>Contact details</h3>
+            <p>For project enquiries, use WhatsApp or email. Instagram contact is not currently available.</p>
+            <a class="contact-detail" href="https://wa.me/2348098657056" target="_blank" rel="noopener">WhatsApp: +234 809 865 7056</a>
+            <a class="contact-detail" href="mailto:ok6793683@gmail.com">Email: ok6793683@gmail.com</a>
+            <a class="btn whatsapp" href="https://wa.me/2348098657056?text=Hello%20OWEN%20DIGITAL%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Message on WhatsApp</a>
+          </div>
+          <div class="contact-panel">
+            <h3>Send a project enquiry</h3>
+            <p>Complete the fields. Your message will be prepared in WhatsApp for you to review and send.</p>
+            <form id="enquiryForm">
+              <input id="clientName" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+              <input id="clientEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <textarea id="projectMessage" name="message" placeholder="What would you like help with?" required></textarea>
+              <button class="btn whatsapp" type="submit">Continue to WhatsApp</button>
+              <span class="form-note">This form does not store information or send automatically. WhatsApp opens so you can review and send the message.</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="year"></span> <strong>OWEN DIGITAL</strong>. All rights reserved.</div></footer>
+  <a class="float-wa" href="https://wa.me/2348098657056" target="_blank" rel="noopener" aria-label="Chat with OWEN DIGITAL on WhatsApp">WhatsApp</a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '✕' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('enquiryForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const email = document.getElementById('clientEmail').value.trim();
+      const message = document.getElementById('projectMessage').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please complete all fields.');
+        return;
+      }
+
+      const text = `Hello OWEN DIGITAL. I would like to make a project enquiry.\n\nName: ${name}\nEmail: ${email}\n\nProject details:\n${message}`;
+      const url = 'https://wa.me/2348098657056?text=' + encodeURIComponent(text);
+      window.location.href = url;
+    });
+  </script>
+</body>
+  </html>
+  
